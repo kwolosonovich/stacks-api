@@ -23,6 +23,9 @@ try {
 export function init(app: express.Application): void {
     const router: express.Router = express.Router();
 
+    // set favicon req status code to 204 
+    app.get('/favicon.ico', (req, res) => res.status(204).end());
+    
     /**
      * @description
      *  Forwards any requests to the /v1/users URI to our UserRouter
